@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.scanlines {
+    background-color: #0b0f19;
+    background-image:
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    background-size: 100% 3px, 6px 100%;
+}
+
+.retro-shadow {
+    box-shadow: 6px 6px 0 #78350f;
+}
+
+/* Prozori */
+.os-window {
+    max-height: calc(100vh - 7rem);
+    background: #111827;
+    border: 2px solid #374151;
+    box-shadow: 4px 4px 0 #000;
+}
+.os-window.is-active {
+    border-color: #f59e0b;
+    box-shadow: 6px 6px 0 #78350f;
+}
+.window-header {
+    background: #374151;
+    color: #9ca3af;
+    touch-action: none;
+}
+.os-window.is-active .window-header {
+    background: #f59e0b;
+    color: #0b0f19;
+}
+.win-btn {
+    padding: 0 0.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    cursor: pointer;
+}
+.win-btn:hover {
+    background: #0b0f19;
+    color: #f59e0b;
+}
+
+/* Na telefonu prozori su skoro preko celog ekrana, bez prevlačenja */
+@media (max-width: 767px) {
+    .os-window {
+        left: 8px !important;
+        top: 60px !important;
+        width: calc(100vw - 16px) !important;
+        max-height: calc(100vh - 130px);
+    }
+    .window-header { cursor: default !important; }
+}
+
+.task-btn {
+    font-family: "VT323", monospace;
+    font-size: 1.15rem;
+    padding: 0 0.9rem;
+    height: 100%;
+    border: 2px solid #374151;
+    color: #9ca3af;
+    background: #0b0f19;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.task-btn:hover { color: #f59e0b; border-color: #f59e0b; }
+.task-btn.is-active { background: #f59e0b; color: #0b0f19; border-color: #f59e0b; }
+
+/* Slika u ćilibar tonu da se uklopi u koncept */
+.amber-photo { position: relative; display: inline-block; flex-shrink: 0; }
+.amber-photo img { filter: grayscale(1) contrast(1.15); }
+.amber-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #f59e0b;
+    mix-blend-mode: multiply;
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+:focus-visible {
+    outline: 2px dashed #f59e0b;
+    outline-offset: 2px;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #0b0f19; border: 1px solid #1f2937; }
+::-webkit-scrollbar-thumb { background: #f59e0b; }
+::-webkit-scrollbar-thumb:hover { background: #d97706; }
+
+@media (prefers-reduced-motion: reduce) {
+    .scanlines { background-image: none !important; }
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Papirić */
+.todo-note {
+    position: relative;
+    flex-shrink: 0;
+    width: 15rem;
+    padding: 1.4rem 1.2rem 1.1rem;
+    margin-top: 0.5rem;
+    background: #fde68a;
+    color: #1c1917;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+    transform: rotate(2.5deg);
+    box-shadow: 4px 5px 0 rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+    transition: transform 0.15s;
+}
+.todo-note:hover { transform: rotate(0deg) translateY(-2px); }
+.todo-tape {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 64px;
+    height: 20px;
+    margin-left: -32px;
+    background: rgba(245, 158, 11, 0.55);
+    transform: rotate(-4deg);
+}
+.todo-open { font-weight: 700; }
+.todo-cursor { animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+@media (max-width: 767px) {
+    .todo-note { width: auto; align-self: stretch; margin: 0.25rem 0.5rem 0; transform: rotate(1deg); }
+}

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bogdan Šarčević | Web dizajner i frontend developer</title>
+    <meta name="description" content="Bogdan Šarčević, web dizajner i frontend developer iz Užica. Dizajniram u Figmi i kodiram sam: sajtovi od nule i redizajni.">
+    <meta name="author" content="Bogdan Šarčević">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bogdan-sarcevic.netlify.app/">
+    <meta property="og:title" content="Bogdan Šarčević | Web dizajner i frontend developer">
+    <meta property="og:description" content="Dizajniram u Figmi i kodiram sam. Pogledaj portfolio.">
+    <meta property="og:image" content="https://bogdan-sarcevic.netlify.app/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="sr_RS">
+    <meta property="og:site_name" content="Bogdan Šarčević">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bogdan Šarčević | Web dizajner i frontend developer">
+    <meta name="twitter:description" content="Dizajniram u Figmi i kodiram sam.">
+    <meta name="twitter:image" content="https://bogdan-sarcevic.netlify.app/assets/og-image.jpg">
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-retroBg text-slate-300 font-mono scanlines min-h-screen selection:bg-retroAmber selection:text-slate-900 overflow-x-hidden">
+
+    <noscript>
+        <p style="padding:2rem;color:#f59e0b;font-family:monospace">
+            Bogdan Šarčević, web dizajner i frontend developer, Užice.
+            Kontakt: sarcevicbogdan258@gmail.com
+        </p>
+    </noscript>
+
+    <!-- Intro -->
+    <div id="intro-screen" class="fixed inset-0 z-50 bg-retroBg scanlines flex flex-col items-center justify-center p-4 transition-opacity duration-500 cursor-pointer">
+        <div class="border-2 border-retroAmber bg-retroPanel max-w-md w-full retro-shadow">
+            <div class="bg-retroAmber text-slate-950 font-pixel text-xl px-3 py-1 flex justify-between">
+                <span>BOGDAN OS v1.0</span>
+            </div>
+            <div class="p-6 font-mono text-xs space-y-2 text-slate-400">
+                <p class="boot-line opacity-0 transition-opacity duration-200" data-translate="boot1">&gt; Pokrećem sistem...</p>
+                <p class="boot-line opacity-0 transition-opacity duration-200" data-translate="boot2">&gt; Učitavam projekte... 4 pronađena</p>
+                <p class="boot-line opacity-0 transition-opacity duration-200 text-retroGreen" data-translate="boot3">&gt; Spremno.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desktop -->
+    <div id="main-desktop" class="opacity-0 transition-opacity duration-1000 hidden min-h-screen flex flex-col pb-14">
+
+        <header class="sticky top-0 z-20 border-b-2 border-retroAmber bg-retroPanel px-4 py-2 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <span class="font-pixel text-xl text-retroAmber tracking-wider">BOGDAN_OS // ROOT</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs">
+                <span id="live-clock" class="hidden sm:inline text-retroAmber">00:00:00</span>
+                <button id="sound-btn" type="button" class="px-2 py-1 border border-retroAmber/50 text-retroAmber font-bold hover:bg-retroAmber hover:text-slate-950 cursor-pointer">ZVUK: NE</button>
+                <button id="lang-btn" type="button" class="px-2 py-1 border border-retroAmber/50 text-retroAmber font-bold hover:bg-retroAmber hover:text-slate-950 cursor-pointer">EN</button>
+            </div>
+        </header>
+
+        <div class="relative w-full max-w-5xl mx-auto p-4 md:p-8 flex-1">
+
+            <!-- Ikonice -->
+            <main class="grid grid-cols-2 sm:grid-cols-5 gap-4 items-start">
+
+                <button type="button" data-open="about" class="group flex flex-col items-center p-4 border-2 border-transparent hover:border-retroAmber hover:bg-retroPanel cursor-pointer">
+                    <span class="w-14 h-14 bg-retroPanel border-2 border-retroAmber flex items-center justify-center mb-2 text-retroAmber group-hover:bg-retroAmber group-hover:text-slate-950">
+                        <svg viewBox="0 0 16 16" class="w-8 h-8" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M0 2h16v1h-16zM0 3h1v1h-1zM15 3h1v1h-1zM0 4h1v1h-1zM2 4h4v1h-4zM15 4h1v1h-1zM0 5h1v1h-1zM2 5h4v1h-4zM8 5h6v1h-6zM15 5h1v1h-1zM0 6h1v1h-1zM2 6h4v1h-4zM15 6h1v1h-1zM0 7h1v1h-1zM3 7h2v1h-2zM8 7h4v1h-4zM15 7h1v1h-1zM0 8h1v1h-1zM2 8h4v1h-4zM15 8h1v1h-1zM0 9h1v1h-1zM2 9h4v1h-4zM8 9h5v1h-5zM15 9h1v1h-1zM0 10h1v1h-1zM2 10h4v1h-4zM15 10h1v1h-1zM0 11h1v1h-1zM15 11h1v1h-1zM0 12h16v1h-16z"/></svg>
+                    </span>
+                    <span class="font-pixel text-xl text-white tracking-wide" data-translate="icon_about">O meni</span>
+                </button>
+
+                <button type="button" data-open="skills" class="group flex flex-col items-center p-4 border-2 border-transparent hover:border-retroAmber hover:bg-retroPanel cursor-pointer">
+                    <span class="w-14 h-14 bg-retroPanel border-2 border-retroAmber flex items-center justify-center mb-2 text-retroAmber group-hover:bg-retroAmber group-hover:text-slate-950">
+                        <svg viewBox="0 0 16 16" class="w-8 h-8" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M8 3h2v1h-2zM8 4h2v1h-2zM3 5h2v1h-2zM7 5h2v1h-2zM11 5h2v1h-2zM2 6h2v1h-2zM7 6h2v1h-2zM12 6h2v1h-2zM1 7h2v1h-2zM7 7h2v1h-2zM13 7h2v1h-2zM1 8h2v1h-2zM6 8h2v1h-2zM13 8h2v1h-2zM2 9h2v1h-2zM6 9h2v1h-2zM12 9h2v1h-2zM3 10h2v1h-2zM6 10h2v1h-2zM11 10h2v1h-2zM5 11h2v1h-2zM5 12h2v1h-2z"/></svg>
+                    </span>
+                    <span class="font-pixel text-xl text-white tracking-wide" data-translate="icon_skills">Alati</span>
+                </button>
+
+                <button type="button" data-open="projects" class="group flex flex-col items-center p-4 border-2 border-transparent hover:border-retroAmber hover:bg-retroPanel cursor-pointer">
+                    <span class="w-14 h-14 bg-retroPanel border-2 border-retroAmber flex items-center justify-center mb-2 text-retroAmber group-hover:bg-retroAmber group-hover:text-slate-950">
+                        <svg viewBox="0 0 16 16" class="w-8 h-8" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v9H1zM3 4h10v5H3zM6 12h4v2H6zM4 14h8v1H4z"/></svg>
+                    </span>
+                    <span class="font-pixel text-xl text-white tracking-wide" data-translate="icon_projects">Projekti</span>
+                </button>
+
+                <button type="button" data-open="services" class="group flex flex-col items-center p-4 border-2 border-transparent hover:border-retroAmber hover:bg-retroPanel cursor-pointer">
+                    <span class="w-14 h-14 bg-retroPanel border-2 border-retroAmber flex items-center justify-center mb-2 text-retroAmber group-hover:bg-retroAmber group-hover:text-slate-950">
+                        <svg viewBox="0 0 16 16" class="w-8 h-8" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 3h12v3H2zM2 7h12v3H2zM2 11h12v3H2z"/></svg>
+                    </span>
+                    <span class="font-pixel text-xl text-white tracking-wide" data-translate="icon_services">Usluge</span>
+                </button>
+
+                <button type="button" data-open="contact" class="group flex flex-col items-center p-4 border-2 border-transparent hover:border-retroAmber hover:bg-retroPanel cursor-pointer">
+                    <span class="w-14 h-14 bg-retroPanel border-2 border-retroAmber flex items-center justify-center mb-2 text-retroAmber group-hover:bg-retroAmber group-hover:text-slate-950">
+                        <svg viewBox="0 0 16 16" class="w-8 h-8" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h14v10H1zM3 5v6h10V5z"/><path d="M3 5l5 4 5-4v1L8 10 3 6z"/></svg>
+                    </span>
+                    <span class="font-pixel text-xl text-white tracking-wide" data-translate="icon_contact">Kontakt</span>
+                </button>
+            </main>
+
+            <div class="mt-6 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+            <!-- Uvod -->
+            <section class="relative border-2 border-retroBorder bg-retroPanel max-w-2xl" aria-labelledby="readme-title">
+                <div class="p-5 space-y-3">
+                    <h1 id="readme-title" class="font-pixel text-4xl text-retroAmber tracking-wide leading-none">Bogdan Šarčević</h1>
+                    <p class="text-white text-sm" data-translate="readme_role">Web dizajner i frontend developer, Užice</p>
+                    <p class="text-slate-300 text-sm leading-relaxed" data-translate="readme_text">Pravim sajtove za male firme i ljude koji rade za sebe. Dizajniram u Figmi i kodiram sam, pa ono što vidiš u mockupu to i dobiješ u browseru.</p>
+                    <div class="flex flex-wrap items-center gap-4 pt-1">
+                        <button type="button" data-open="contact" class="px-3 py-2 bg-retroAmber hover:bg-retroAmberHover text-slate-950 font-pixel text-xl cursor-pointer" data-translate="readme_cta">[ Pošalji upit ]</button>
+                        <span class="text-xs text-retroGreen flex items-center gap-2"><span class="w-2 h-2 bg-retroGreen inline-block"></span><span data-translate="readme_status">Slobodan za nove projekte</span></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Papirić zalepljen na desktop -->
+            <button type="button" data-open="contact" class="todo-note" aria-label="Otvori kontakt" data-translate-aria="aria_todo">
+                <span class="todo-tape" aria-hidden="true"></span>
+                <span class="block">[x] <span data-translate="todo1">auto perionica</span></span>
+                <span class="block">[x] <span data-translate="todo4">blog</span></span>
+                <span class="block">[x] <span data-translate="todo5">task menadžer</span></span>
+                <span class="block">[x] <span data-translate="todo2">ovaj sajt</span></span>
+                <span class="block todo-open">[ ] <span data-translate="todo3">tvoj projekat</span><span class="todo-cursor" aria-hidden="true">_</span></span>
+            </button>
+            </div>
+
+            <!-- Terminal -->
+            <div class="relative bg-black/60 border-2 border-retroBorder p-3 mt-6 font-mono text-xs max-w-xl">
+                <div class="text-retroAmber mb-2 font-bold" data-translate="term_label">&gt; TERMINAL (ukucaj help)</div>
+                <div id="terminal-output" class="text-slate-400 mb-2 h-20 overflow-y-auto space-y-0.5" aria-live="polite">
+                    <p data-translate="term_ready">Sistem spreman. Unesi komandu u polje ispod.</p>
+                </div>
+                <div class="flex gap-2">
+                    <span class="text-retroGreen">&gt;</span>
+                    <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" aria-label="Terminal"
+                           data-translate-placeholder="term_placeholder" placeholder="npr. help, projects, contact..."
+                           class="bg-transparent border-none outline-none text-white w-full font-mono text-xs">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Prozori -->
+        <div id="window-layer" class="fixed inset-0 z-30 pointer-events-none">
+
+            <!-- O meni -->
+            <div id="about-window" data-win="about" role="dialog" aria-labelledby="about-title" tabindex="-1"
+                 class="os-window absolute hidden flex flex-col pointer-events-auto outline-none w-[30rem]">
+                <div class="window-header flex justify-between items-center px-2 py-1 cursor-grab select-none">
+                    <span id="about-title" class="font-pixel text-xl" data-translate="win_about">O meni</span>
+                    <span class="flex">
+                        <button type="button" data-min="about" aria-label="Minimizuj" data-translate-aria="aria_min" class="win-btn">[ _ ]</button>
+                        <button type="button" data-close="about" aria-label="Zatvori" data-translate-aria="aria_close" class="win-btn">[ X ]</button>
+                    </span>
+                </div>
+                <div class="p-5 space-y-4 text-sm overflow-y-auto">
+                    <div class="flex gap-4 items-center">
+                        <div class="amber-photo">
+                            <img src="assets/profile.jpg" alt="Bogdan Šarčević" loading="lazy" decoding="async"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2296%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23111827%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23f59e0b%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22monospace%22 font-size=%2212%22>NO IMG</text></svg>';"
+                                 class="w-20 h-24 object-cover border-2 border-retroAmber">
+                        </div>
+                        <div>
+                            <h2 class="text-white font-bold text-lg">Bogdan Šarčević</h2>
+                            <p class="text-retroAmber text-xs" data-translate="about_subtitle">Web dizajner i frontend developer</p>
+                            <p class="text-slate-400 text-xs mt-1"><span class="text-retroAmber">LOC:</span> Užice, Srbija</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed" data-translate="about_text">Dizajniram i kodiram sam, pa nema gubitka između skice i gotovog sajta. Kad treba, napravim i ceo backend sa bazom i prijavom korisnika.</p>
+                </div>
+            </div>
+
+            <!-- Alati -->
+            <div id="skills-window" data-win="skills" role="dialog" aria-labelledby="skills-title" tabindex="-1"
+                 class="os-window absolute hidden flex flex-col pointer-events-auto outline-none w-[34rem]">
+                <div class="window-header flex justify-between items-center px-2 py-1 cursor-grab select-none">
+                    <span id="skills-title" class="font-pixel text-xl" data-translate="win_skills">Alati</span>
+                    <span class="flex">
+                        <button type="button" data-min="skills" aria-label="Minimizuj" data-translate-aria="aria_min" class="win-btn">[ _ ]</button>
+                        <button type="button" data-close="skills" aria-label="Zatvori" data-translate-aria="aria_close" class="win-btn">[ X ]</button>
+                    </span>
+                </div>
+                <div class="p-5 space-y-5 text-xs overflow-y-auto">
+                    <div>
+                        <span class="text-retroAmber font-pixel text-lg block" data-translate="sk1">&gt; Svaki dan</span>
+                        <p class="text-slate-500 mb-2" data-translate="sk1_note">Ovim radim svaki sajt.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-black/40 border border-retroBorder text-white">Figma</span>
+                            <span class="px-2 py-1 bg-black/40 border border-retroBorder text-white">HTML</span>
+                            <span class="px-2 py-1 bg-black/40 border border-retroBorder text-white">CSS</span>
+                            <span class="px-2 py-1 bg-black/40 border border-retroBorder text-white">JavaScript</span>
+                            <span class="px-2 py-1 bg-black/40 border border-retroBorder text-white">Tailwind CSS</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-retroAmber font-pixel text-lg block" data-translate="sk2">&gt; Na projektima</span>
+                        <p class="text-slate-500 mb-2" data-translate="sk2_note">Na ovome su napravljeni moji projekti.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-black/40 border border-retroBorder text-white">React</span>
+                            <span class="px-2 py-1 bg-black/40 border border-retroBorder text-white">Node.js</span>
+                            <span class="px-2 py-1 bg-black/40 border border-retroBorder text-white">Express</span>
+                            <span class="px-2 py-1 bg-black/40 border border-retroBorder text-white">PostgreSQL</span>
+                            <span class="px-2 py-1 bg-black/40 border border-retroBorder text-white">Python</span>
+                            <span class="px-2 py-1 bg-black/40 border border-retroBorder text-white">Flask</span>
+                            <span class="px-2 py-1 bg-black/40 border border-retroBorder text-white">PHP</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-retroAmber font-pixel text-lg block" data-translate="sk3">&gt; Znam osnove</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-black/40 border border-retroBorder text-white">Photoshop</span>
+                            <span class="px-2 py-1 bg-black/40 border border-retroBorder text-white">Illustrator</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projekti -->
+            <div id="projects-window" data-win="projects" role="dialog" aria-labelledby="projects-title" tabindex="-1"
+                 class="os-window absolute hidden flex flex-col pointer-events-auto outline-none w-[40rem]">
+                <div class="window-header flex justify-between items-center px-2 py-1 cursor-grab select-none">
+                    <span id="projects-title" class="font-pixel text-xl" data-translate="win_projects">Projekti</span>
+                    <span class="flex">
+                        <button type="button" data-min="projects" aria-label="Minimizuj" data-translate-aria="aria_min" class="win-btn">[ _ ]</button>
+                        <button type="button" data-close="projects" aria-label="Zatvori" data-translate-aria="aria_close" class="win-btn">[ X ]</button>
+                    </span>
+                </div>
+                <div class="p-5 space-y-5 text-sm overflow-y-auto">
+
+                    <!-- Projekat 01: Auto perionica -->
+                    <article class="border-2 border-retroBorder bg-black/30">
+                        <a href="https://car-wash-bogdan.netlify.app" target="_blank" rel="noopener" class="block relative aspect-video bg-retroBg border-b-2 border-retroBorder">
+                            <span class="absolute inset-0 flex items-center justify-center text-xs text-slate-600">assets/carwash.png</span>
+                            <img src="assets/carwash.png" alt="Auto perionica, kontrolna tabla" data-translate-alt="alt_carwash" loading="lazy" onerror="this.remove()" class="relative w-full h-full object-cover">
+                        </a>
+                        <div class="p-4">
+                            <h3 class="text-retroAmber font-bold mb-1 text-base">01 // Auto Perionica</h3>
+                            <p class="text-slate-400 text-xs mb-3 leading-relaxed" data-translate="proj_desc2">Sistem za upravljanje auto perionicom: klijenti, vozila, termini, radnici i usluge, sa PostgreSQL bazom u oblaku.</p>
+                            <p class="text-slate-300 text-xs mb-3 leading-relaxed border-l-2 border-retroAmber pl-3"><span class="text-retroAmber font-bold" data-translate="proj_hard_label">Najteže:</span> <span data-translate="proj_hard2">povezati sve sa bazom. Prijava i registracija rade preko JWT tokena, a prihod se računa samo od završenih termina.</span></p>
+                            <div class="flex flex-wrap gap-1.5 mb-3">
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">React</span>
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">Node.js</span>
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">Express</span>
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">PostgreSQL</span>
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">JWT</span>
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">Tailwind</span>
+                            </div>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="https://car-wash-bogdan.netlify.app" target="_blank" rel="noopener" class="inline-block text-xs text-retroGreen font-bold hover:underline" data-translate="proj_live">[ Pogledaj uživo -&gt; ]</a>
+                                <a href="https://github.com/Sarca03/car-wash-frontend" target="_blank" rel="noopener" class="inline-block text-xs text-slate-400 hover:text-retroAmber hover:underline" data-translate="proj_code">[ Kod na GitHub-u ]</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projekat 02: DevBlog -->
+                    <article class="border-2 border-retroBorder bg-black/30">
+                        <a href="https://flask-blog-ud95.onrender.com" target="_blank" rel="noopener" class="block relative aspect-video bg-retroBg border-b-2 border-retroBorder">
+                            <span class="absolute inset-0 flex items-center justify-center text-xs text-slate-600">assets/blog.png</span>
+                            <img src="assets/blog.png" alt="DevBlog, početna strana" data-translate-alt="alt_blog" loading="lazy" onerror="this.remove()" class="relative w-full h-full object-cover">
+                        </a>
+                        <div class="p-4">
+                            <h3 class="text-retroAmber font-bold mb-1 text-base">02 // DevBlog</h3>
+                            <p class="text-slate-400 text-xs mb-3 leading-relaxed" data-translate="proj_desc3">Blog u Flasku gde pišem o greškama na koje sam naišao u projektima. Čitaoci mogu da se registruju i komentarišu.</p>
+                            <p class="text-slate-300 text-xs mb-3 leading-relaxed border-l-2 border-retroAmber pl-3"><span class="text-retroAmber font-bold" data-translate="proj_hard_label">Najteže:</span> <span data-translate="proj_hard3">uloge. Svako može da komentariše, ali članke objavljuje samo admin, a svaka forma je zaštićena CSRF tokenom.</span></p>
+                            <div class="flex flex-wrap gap-1.5 mb-3">
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">Python</span>
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">Flask</span>
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">SQLAlchemy</span>
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">PostgreSQL</span>
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">Flask-Login</span>
+                            </div>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="https://flask-blog-ud95.onrender.com" target="_blank" rel="noopener" class="inline-block text-xs text-retroGreen font-bold hover:underline" data-translate="proj_live">[ Pogledaj uživo -&gt; ]</a>
+                                <a href="https://github.com/Sarca03/flask-blog" target="_blank" rel="noopener" class="inline-block text-xs text-slate-400 hover:text-retroAmber hover:underline" data-translate="proj_code">[ Kod na GitHub-u ]</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projekat 03: ProTask -->
+                    <article class="border-2 border-retroBorder bg-black/30">
+                        <a href="https://pro-task-manager-vryi.onrender.com" target="_blank" rel="noopener" class="block relative aspect-video bg-retroBg border-b-2 border-retroBorder">
+                            <span class="absolute inset-0 flex items-center justify-center text-xs text-slate-600">assets/taskmanager.png</span>
+                            <img src="assets/taskmanager.png" alt="ProTask, kontrolna tabla sa zadacima" data-translate-alt="alt_protask" loading="lazy" onerror="this.remove()" class="relative w-full h-full object-cover">
+                        </a>
+                        <div class="p-4">
+                            <h3 class="text-retroAmber font-bold mb-1 text-base">03 // ProTask</h3>
+                            <p class="text-slate-400 text-xs mb-3 leading-relaxed" data-translate="proj_desc4">Menadžer zadataka sa prioritetima, rokovima, pretragom i pregledom za narednih 7 dana. Svaki korisnik vidi samo svoje zadatke.</p>
+                            <p class="text-slate-300 text-xs mb-3 leading-relaxed border-l-2 border-retroAmber pl-3"><span class="text-retroAmber font-bold" data-translate="proj_hard_label">Najteže:</span> <span data-translate="proj_hard4">prebaciti aplikaciju sa MySQL-a na PostgreSQL u oblaku i spakovati je u Docker da radi na Render-u.</span></p>
+                            <div class="flex flex-wrap gap-1.5 mb-3">
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">PHP</span>
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">PostgreSQL</span>
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">Docker</span>
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">Neon</span>
+                            </div>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="https://pro-task-manager-vryi.onrender.com" target="_blank" rel="noopener" class="inline-block text-xs text-retroGreen font-bold hover:underline" data-translate="proj_live">[ Pogledaj uživo -&gt; ]</a>
+                                <a href="https://github.com/Sarca03/pro-task-manager" target="_blank" rel="noopener" class="inline-block text-xs text-slate-400 hover:text-retroAmber hover:underline" data-translate="proj_code">[ Kod na GitHub-u ]</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projekat 04: ovaj sajt -->
+                    <article class="border-2 border-retroBorder bg-black/30">
+                        <div class="relative aspect-video bg-retroBg border-b-2 border-retroBorder">
+                            <span class="absolute inset-0 flex items-center justify-center text-xs text-slate-600">assets/portfolio.png</span>
+                            <img src="assets/portfolio.png" alt="Bogdan OS, ovaj sajt" data-translate-alt="alt_portfolio" loading="lazy" onerror="this.remove()" class="relative w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-retroAmber font-bold mb-1 text-base">04 // Bogdan OS</h3>
+                            <p class="text-slate-400 text-xs mb-3 leading-relaxed" data-translate="proj_desc1">Ovaj sajt. Retro operativni sistem u čistom HTML-u, CSS-u i JavaScriptu: prozori koji se pomeraju, terminal i zvuk generisan u kodu.</p>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">HTML/CSS</span>
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">JavaScript</span>
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">Tailwind</span>
+                                <span class="text-[10px] px-2 py-0.5 bg-retroBorder text-retroAmber">Web Audio API</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Usluge -->
+            <div id="services-window" data-win="services" role="dialog" aria-labelledby="services-title" tabindex="-1"
+                 class="os-window absolute hidden flex flex-col pointer-events-auto outline-none w-[30rem]">
+                <div class="window-header flex justify-between items-center px-2 py-1 cursor-grab select-none">
+                    <span id="services-title" class="font-pixel text-xl" data-translate="win_services">Usluge</span>
+                    <span class="flex">
+                        <button type="button" data-min="services" aria-label="Minimizuj" data-translate-aria="aria_min" class="win-btn">[ _ ]</button>
+                        <button type="button" data-close="services" aria-label="Zatvori" data-translate-aria="aria_close" class="win-btn">[ X ]</button>
+                    </span>
+                </div>
+                <div class="p-5 space-y-4 text-sm overflow-y-auto">
+                    <div class="border-l-2 border-retroAmber pl-3">
+                        <h3 class="text-white font-bold" data-translate="svc1_title">Sajt od nule</h3>
+                        <p class="text-slate-400 text-xs mt-1" data-translate="svc1_text">Dizajn i kod, od skice do objave na tvom domenu.</p>
+                    </div>
+                    <div class="border-l-2 border-retroAmber pl-3">
+                        <h3 class="text-white font-bold" data-translate="svc2_title">Redizajn</h3>
+                        <p class="text-slate-400 text-xs mt-1" data-translate="svc2_text">Imaš sajt koji ti je neprijatno da pošalješ klijentu? Napravimo ga ponovo.</p>
+                    </div>
+                    <div class="border-l-2 border-retroAmber pl-3">
+                        <h3 class="text-white font-bold" data-translate="svc3_title">Grafički dizajn</h3>
+                        <p class="text-slate-400 text-xs mt-1" data-translate="svc3_text">Logo i vizuelni identitet, materijali za društvene mreže.</p>
+                    </div>
+                    <button type="button" data-open="contact" class="px-3 py-2 bg-retroAmber hover:bg-retroAmberHover text-slate-950 font-pixel text-xl cursor-pointer" data-translate="readme_cta">[ Pošalji upit ]</button>
+                </div>
+            </div>
+
+            <!-- Kontakt -->
+            <div id="contact-window" data-win="contact" role="dialog" aria-labelledby="contact-title" tabindex="-1"
+                 class="os-window absolute hidden flex flex-col pointer-events-auto outline-none w-[28rem]">
+                <div class="window-header flex justify-between items-center px-2 py-1 cursor-grab select-none">
+                    <span id="contact-title" class="font-pixel text-xl" data-translate="win_contact">Kontakt</span>
+                    <span class="flex">
+                        <button type="button" data-min="contact" aria-label="Minimizuj" data-translate-aria="aria_min" class="win-btn">[ _ ]</button>
+                        <button type="button" data-close="contact" aria-label="Zatvori" data-translate-aria="aria_close" class="win-btn">[ X ]</button>
+                    </span>
+                </div>
+                <div class="p-5 space-y-3 text-sm overflow-y-auto">
+                    <p class="text-slate-300" data-translate="contact_text">Javi se i napiši par rečenica o tome šta ti treba.</p>
+                    <p class="flex flex-wrap items-center gap-x-3 gap-y-1">
+                        <span class="text-retroAmber font-bold w-20">MAIL</span>
+                        <a href="mailto:sarcevicbogdan258@gmail.com" class="text-white underline hover:text-retroAmber">sarcevicbogdan258@gmail.com</a>
+                        <button type="button" data-copy="sarcevicbogdan258@gmail.com" class="text-xs text-retroGreen font-bold hover:underline cursor-pointer" data-translate="contact_copy">[ kopiraj ]</button>
+                    </p>
+                    <p class="flex items-center gap-x-3 text-xs">
+                        <span class="text-retroAmber font-bold w-20 text-sm">LINKEDIN</span>
+                        <a href="https://www.linkedin.com/in/bogdan-sarcevic-4ba197425/" target="_blank" rel="noopener" class="text-slate-300 underline hover:text-retroAmber" data-translate="contact_profile">Profil -&gt;</a>
+                    </p>
+                    <p class="flex items-center gap-x-3 text-xs">
+                        <span class="text-retroAmber font-bold w-20 text-sm">UPWORK</span>
+                        <a href="https://www.upwork.com/freelancers/~019d6f59b2736eb644" target="_blank" rel="noopener" class="text-slate-300 underline hover:text-retroAmber" data-translate="contact_profile">Profil -&gt;</a>
+                    </p>
+                    <p class="flex items-center gap-x-3 text-xs">
+                        <span class="text-retroAmber font-bold w-20 text-sm">GITHUB</span>
+                        <a href="https://github.com/Sarca03" target="_blank" rel="noopener" class="text-slate-300 underline hover:text-retroAmber">github.com/Sarca03</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Taskbar -->
+        <nav class="fixed bottom-0 left-0 right-0 z-40 h-11 bg-retroPanel border-t-2 border-retroAmber flex items-stretch gap-2 px-2 py-1" aria-label="Otvoreni prozori" data-translate-aria="aria_taskbar">
+            <div id="taskbar-tasks" class="flex gap-2 overflow-x-auto"></div>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

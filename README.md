@@ -1,23 +1,23 @@
 # Bogdan OS
 
-Moj portfolio, napravljen da liči na stari operativni sistem: ikonice na desktopu, prozori koji se pomeraju, taskbar i mali terminal.
+My portfolio, made to look like an old desktop operating system: desktop icons, windows you can drag around, a taskbar and a small terminal.
 
-Uživo: https://bogdan-sarcevic.netlify.app
+Live: https://bogdan-sarcevic.netlify.app
 
-## Kako radi
+## How it works
 
-- Bez frameworka: `index.html`, `script.js` i Tailwind za stilove.
-- Prozori se prevlače preko Pointer Events, pa radi i mišem i prstom. Na telefonu se otvaraju preko celog ekrana.
-- Zvukovi se generišu preko Web Audio API-ja, bez audio fajlova. Podrazumevano su isključeni.
-- Srpski i engleski, izbor se pamti u `localStorage`.
-- Terminal prima: `help`, `about`, `skills`, `projects`, `services`, `contact`, `lang`, `clear`.
+- No framework: `index.html`, `script.js` and Tailwind for styles.
+- Windows are dragged with Pointer Events, so it works with a mouse and a finger. On phones they open full screen.
+- Sounds are generated with the Web Audio API, no audio files. They are off by default.
+- Serbian and English, the choice is saved in `localStorage`.
+- The terminal understands: `help`, `about`, `skills`, `projects`, `services`, `contact`, `lang`, `clear`.
 
-## Pokretanje
+## Running it
 
 ```
 npm install
-npm run watch   # dok radiš
-npm run build   # pravi output.css
+npm run watch   # while you work
+npm run build   # builds output.css
 ```
 
-Pa otvori `index.html`. `output.css` nije u repou, Netlify ga pravi pri deployu (vidi `netlify.toml`).
+Then open `index.html`. `output.css` is not in the repo, Netlify builds it on deploy (see `netlify.toml`).

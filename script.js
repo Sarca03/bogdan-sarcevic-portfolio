@@ -72,7 +72,7 @@ const translations = {
         readme_cta2: "[ See my work ]",
         readme_status: "Available for new projects",
         about_subtitle: "Websites and web apps, React and Node",
-        about_text: "I design and code it myself, so nothing gets lost between the sketch and the finished site. When needed, I also build the backend with a database and user login.",
+        about_text: "I design and code everything myself, so nothing gets lost between the sketch and the finished site. When needed, I also build the backend with a database and user login.",
         about_personal: "Outside of coding I play basketball and go to the gym.",
         proj_desc1: "This site. A retro operating system in plain HTML, CSS and JavaScript: draggable windows, a terminal and sound generated in code.",
         proj_desc2: "Car wash management system: clients, vehicles, appointments, workers and services, backed by a PostgreSQL database in the cloud.",
@@ -95,8 +95,8 @@ const translations = {
         proc1: "1. A short call: what you need and who the site is for.",
         proc2: "2. Plan and price: exactly what the job includes, before I start.",
         proc3: "3. Design in Figma, then your changes.",
-        proc4: "4. Build and a preview version on a link.",
-        proc5: "5. Launch on your domain and a guide for editing the content.",
+        proc4: "4. Build, with a preview version on a link.",
+        proc5: "5. Launch on your domain, plus a short guide for editing the content.",
         svc3_title: "Graphic design", svc3_text: "Logo and visual identity, social media materials.",
         contact_text: "Get in touch and write a few sentences about what you need.",
         contact_copy: "[ copy ]", contact_copied: "[ copied ]",
@@ -211,7 +211,7 @@ function placeWindow(el) {
     const w = el.offsetWidth;
     const h = el.offsetHeight;
     let x = 72 + n * 32;
-    let y = 72 + n * 28;
+    let y = 220 + n * 28;
     x = Math.max(8, Math.min(x, window.innerWidth - w - 16));
     y = Math.max(52, Math.min(y, window.innerHeight - h - 56));
     el.style.left = x + 'px';

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bogdan-sarcevic.netlify.app/sitemap.xml
